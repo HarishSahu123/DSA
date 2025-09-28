@@ -266,6 +266,13 @@ public class Implement {
 
 //        Best way by using slow and fast
 
+
+//        Find the Minimum and Maximum Number of Nodes between Critical
+
+//        Split Linked List in parts (lec resource)
+
+//        Add Two Numbers [Leetcode-2] (lec resource)
+
         public static Node FindMiddleNode(Node head){
             Node fast=head;  // 1->2->3->4->5->6   //1->2->3-
             Node slow=head;
@@ -322,8 +329,35 @@ public class Implement {
 
         //Reverse Linked By Using Recurssion
 
+        //Reverse Linked By Using Iteration
+
+        //Reverse Linked List by using 
+        public static Node reverserIteration(Node head){
+            Node curr=head;
+            Node perv=null;
+            Node next=null;
+
+            while (curr.next!=null){
+                next=curr.next;
+                curr.next=perv;
+                perv=curr;
+                curr=next;
+            }
+            return perv;
+        }
+
+        //chcck Palindrome two Wy
+//        1. Create duplicate node
+//        2. find middle-> reverse the secodnhalf -> comapare if yes then true else false
 
 
+
+//        Maxium Sum of twin a Linked List
+
+
+
+
+        
 
 
 
@@ -351,12 +385,15 @@ public class Implement {
             Node x=new Node(10);
             Node y=new Node(9);
             Node z=new Node(8);
-            linkedlist.oddAndEvenLinkedList(a);
+//            linkedlist.oddAndEvenLinkedList(a);
 
 //            x.next=y;
 //            y.next=z;
 //            z.next=e;
 //            linkedlist.display(a);
+            Node node = linkedlist.reverserIteration(a);
+
+            linkedlist.display(node);
 //            linkedlist.display(x);
 //            Node insersectionNode = linkedlist.IntersectionNodeOfTwoLinkedList(a, x);
 //            System.out.println(insersectionNode.data);

@@ -31,7 +31,6 @@ public class StreamCodingAdvance {
 
 
         //1. How many male and female employees are there in the organization ?
-
         Map<String, Long> collect9 = employeeList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
         System.out.println(collect9);
 
@@ -135,21 +134,53 @@ public class StreamCodingAdvance {
         System.out.println(limit);;
 
 
+       List<Integer> ls=  list.stream().filter(i->i%2==0).collect(Collectors.toList());
+        System.out.println(ls);
+
+        Optional<Integer> max2 = list.stream().max(Integer::compareTo);
+        System.out.println(max2);
+
+        int sum = list.stream().mapToInt(Integer::intValue).sum();
+        System.out.println(sum);
+
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        List<String> collect14 = names.stream().map(String::toUpperCase).collect(Collectors.toList());
+        System.out.println(collect14);
+
+
+        long count = list.stream().count();
+        System.out.println(count);
+
+//        7. Get Distinct Elements
+        List<Integer> collect15 = list.stream().distinct().collect(Collectors.toList());
+        System.out.println(collect15);
+
+//        8. Reduce to Sum
+        Integer reduce = list.stream().reduce(10, Integer::sum);
+        System.out.println(reduce);
 
 
 
+        //9.Flatmap ->
+        List<List<String>> namesList = Arrays.asList(
+                Arrays.asList("John", "Alice"),
+                Arrays.asList("Bob", "Eve")
+        );
+
+        List<String> allNames = namesList.stream()
+                .flatMap(List::stream)   // Flatten nested lists
+                .collect(Collectors.toList());
+        System.out.println(allNames); // [John, Alice, Bob, Eve]
 
 
+        IntSummaryStatistics intSummaryStatistics = list.stream().mapToInt(Integer::intValue).summaryStatistics();
+        System.out.println(intSummaryStatistics);
+
+        // 
 
 
 
 
     }
-
-
-
-
-
-
 
 }
