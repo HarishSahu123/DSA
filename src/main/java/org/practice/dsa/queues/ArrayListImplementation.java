@@ -1,14 +1,18 @@
 package org.practice.dsa.queues;
 
+
 public class ArrayListImplementation {
+    public static class Node{
+        int val;
+        Node node;
 
-    public static class Queue{
+        public Node(int val) {
+            this.val = val;
+        }
+        public static class Queue{
 
-        int []arr;
-        int f=-1;
-        int r=-1;
+        }
+     }
 
 
-
-    }
 }
