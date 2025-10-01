@@ -46,6 +46,7 @@ public class Implementation {
         preorder(root);
         System.out.println();
         postOrder(root);
+        sizeOfTree(root);
     }
 
     //In order Transvel print
@@ -91,7 +92,9 @@ public class Implementation {
     // Internal Node=
     //
 
-    public static void sizeOfTree(Node node){
-
+    public static int sizeOfTree(Node node){
+        int count = 0;
+        displayTree(node);
+        return 1;
     }
 }
